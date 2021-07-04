@@ -1,5 +1,5 @@
 # Vaccinations
-This is app search for Vaccinations happening near you
+This is app search for Vaccinations happening near you.
 This is small working demo of MVVM Design pattern with API Setu
 
 ## Contributing
