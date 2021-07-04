@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchForVaccinationVC.swift
 //  Vaccinations
 //
 //  Created by Harshal Pathak on 04/07/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchForVaccinationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
