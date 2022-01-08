@@ -14,6 +14,20 @@
 		5E0610A626916EA500D53900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0610A526916EA500D53900 /* Assets.xcassets */; };
 		5E0610A926916EA500D53900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0610A726916EA500D53900 /* LaunchScreen.storyboard */; };
 		5E0610B22691802000D53900 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0610B12691802000D53900 /* IQKeyboardManagerSwift */; };
+		5EA60A852789674600484E96 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A842789674600484E96 /* TableViewDataSource.swift */; };
+		5EA60A882789696100484E96 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A872789696100484E96 /* CardView.swift */; };
+		5EA60A8A2789698500484E96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A892789698500484E96 /* Constants.swift */; };
+		5EA60A8D27896A1700484E96 /* VaccinationCentersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */; };
+		5EE9B7F0278172B800CCA90D /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7EF278172B800CCA90D /* WebServices.swift */; };
+		5EE9B7F32781738400CCA90D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F22781738400CCA90D /* State.swift */; };
+		5EE9B7F6278174CD00CCA90D /* StatesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F5278174CD00CCA90D /* StatesListViewModel.swift */; };
+		5EE9B7F827817F0D00CCA90D /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F727817F0D00CCA90D /* District.swift */; };
+		5EE9B7FA2781803900CCA90D /* DistrictsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F92781803900CCA90D /* DistrictsListViewModel.swift */; };
+		5EE9B7FD278185E500CCA90D /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5EE9B7FC278185E500CCA90D /* MBProgressHUD */; };
+		5EE9B7FF2781928A00CCA90D /* VaccinationCentersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7FE2781928A00CCA90D /* VaccinationCentersVC.swift */; };
+		5EE9B8052781C9BD00CCA90D /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B8032781C9BD00CCA90D /* Sessions.swift */; };
+		5EE9B8062781C9BD00CCA90D /* VaccinationCenterRespons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B8042781C9BD00CCA90D /* VaccinationCenterRespons.swift */; };
+		5EE9B8082781CABF00CCA90D /* CentersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B8072781CABF00CCA90D /* CentersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +39,19 @@
 		5E0610A526916EA500D53900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0610A826916EA500D53900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0610AA26916EA500D53900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EA60A842789674600484E96 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		5EA60A872789696100484E96 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5EA60A892789698500484E96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCentersTVC.swift; sourceTree = "<group>"; };
+		5EE9B7EF278172B800CCA90D /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		5EE9B7F22781738400CCA90D /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		5EE9B7F5278174CD00CCA90D /* StatesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesListViewModel.swift; sourceTree = "<group>"; };
+		5EE9B7F727817F0D00CCA90D /* District.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
+		5EE9B7F92781803900CCA90D /* DistrictsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsListViewModel.swift; sourceTree = "<group>"; };
+		5EE9B7FE2781928A00CCA90D /* VaccinationCentersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCentersVC.swift; sourceTree = "<group>"; };
+		5EE9B8032781C9BD00CCA90D /* Sessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		5EE9B8042781C9BD00CCA90D /* VaccinationCenterRespons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccinationCenterRespons.swift; sourceTree = "<group>"; };
+		5EE9B8072781CABF00CCA90D /* CentersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE9B7FD278185E500CCA90D /* MBProgressHUD in Frameworks */,
 				5E0610B22691802000D53900 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,15 +86,84 @@
 		5E06109B26916EA400D53900 /* Vaccinations */ = {
 			isa = PBXGroup;
 			children = (
+				5EA60A8B278969F100484E96 /* Cells */,
+				5EA60A862789694B00484E96 /* Utils */,
+				5EA60A832789673500484E96 /* DataSource */,
+				5EE9B7F4278174B100CCA90D /* ViewModel */,
+				5EE9B7F12781737600CCA90D /* Model */,
+				5EE9B7EE278172A200CCA90D /* Services */,
 				5E06109C26916EA400D53900 /* AppDelegate.swift */,
 				5E06109E26916EA400D53900 /* SceneDelegate.swift */,
 				5E0610A026916EA400D53900 /* SearchForVaccinationVC.swift */,
+				5EE9B7FE2781928A00CCA90D /* VaccinationCentersVC.swift */,
 				5E0610A226916EA400D53900 /* Main.storyboard */,
 				5E0610A526916EA500D53900 /* Assets.xcassets */,
 				5E0610A726916EA500D53900 /* LaunchScreen.storyboard */,
 				5E0610AA26916EA500D53900 /* Info.plist */,
 			);
 			path = Vaccinations;
+			sourceTree = "<group>";
+		};
+		5EA60A832789673500484E96 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5EA60A842789674600484E96 /* TableViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5EA60A862789694B00484E96 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5EA60A872789696100484E96 /* CardView.swift */,
+				5EA60A892789698500484E96 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5EA60A8B278969F100484E96 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5EE9B7EE278172A200CCA90D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5EE9B7EF278172B800CCA90D /* WebServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5EE9B7F12781737600CCA90D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE9B8022781C9A100CCA90D /* VaccinationCenterResponse */,
+				5EE9B7F22781738400CCA90D /* State.swift */,
+				5EE9B7F727817F0D00CCA90D /* District.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EE9B7F4278174B100CCA90D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5EE9B7F5278174CD00CCA90D /* StatesListViewModel.swift */,
+				5EE9B7F92781803900CCA90D /* DistrictsListViewModel.swift */,
+				5EE9B8072781CABF00CCA90D /* CentersListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5EE9B8022781C9A100CCA90D /* VaccinationCenterResponse */ = {
+			isa = PBXGroup;
+			children = (
+				5EE9B8032781C9BD00CCA90D /* Sessions.swift */,
+				5EE9B8042781C9BD00CCA90D /* VaccinationCenterRespons.swift */,
+			);
+			path = VaccinationCenterResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +184,7 @@
 			name = Vaccinations;
 			packageProductDependencies = (
 				5E0610B12691802000D53900 /* IQKeyboardManagerSwift */,
+				5EE9B7FC278185E500CCA90D /* MBProgressHUD */,
 			);
 			productName = Vaccinations;
 			productReference = 5E06109926916EA400D53900 /* Vaccinations.app */;
@@ -117,6 +215,7 @@
 			mainGroup = 5E06109026916EA400D53900;
 			packageReferences = (
 				5E0610B02691802000D53900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				5EE9B7FB278185E500CCA90D /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = 5E06109A26916EA400D53900 /* Products */;
 			projectDirPath = "";
@@ -145,8 +244,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA60A882789696100484E96 /* CardView.swift in Sources */,
+				5EE9B7FA2781803900CCA90D /* DistrictsListViewModel.swift in Sources */,
+				5EE9B8082781CABF00CCA90D /* CentersListViewModel.swift in Sources */,
+				5EE9B7F6278174CD00CCA90D /* StatesListViewModel.swift in Sources */,
+				5EE9B8052781C9BD00CCA90D /* Sessions.swift in Sources */,
+				5EA60A8A2789698500484E96 /* Constants.swift in Sources */,
+				5EA60A8D27896A1700484E96 /* VaccinationCentersTVC.swift in Sources */,
+				5EE9B7FF2781928A00CCA90D /* VaccinationCentersVC.swift in Sources */,
+				5EE9B7F827817F0D00CCA90D /* District.swift in Sources */,
 				5E0610A126916EA400D53900 /* SearchForVaccinationVC.swift in Sources */,
 				5E06109D26916EA400D53900 /* AppDelegate.swift in Sources */,
+				5EE9B7F0278172B800CCA90D /* WebServices.swift in Sources */,
+				5EE9B7F32781738400CCA90D /* State.swift in Sources */,
+				5EA60A852789674600484E96 /* TableViewDataSource.swift in Sources */,
+				5EE9B8062781C9BD00CCA90D /* VaccinationCenterRespons.swift in Sources */,
 				5E06109F26916EA400D53900 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +471,14 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		5EE9B7FB278185E500CCA90D /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -366,6 +486,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E0610B02691802000D53900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		5EE9B7FC278185E500CCA90D /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EE9B7FB278185E500CCA90D /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
