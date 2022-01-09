@@ -9,7 +9,7 @@ import Foundation
 
 struct Cells {
     static let centerCell = "CenterCell"
-    static let slotsCell = "SlotsCell"
+    static let slotCell = "SlotCell"
 }
 
 struct SegueIdentifier {

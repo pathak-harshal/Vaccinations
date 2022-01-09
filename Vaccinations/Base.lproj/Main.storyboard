@@ -203,9 +203,21 @@ Vaccinate</string>
                                     <segment title="Paid"/>
                                     <segment title="Free"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onPaymentTypeChanged:" destination="o1T-Ce-ukt" eventType="valueChanged" id="Mv0-cd-VYe"/>
+                                </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jc-cG-7yd">
+                                <rect key="frame" x="16" y="158" width="382" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ruI-7W-y7e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q4s-MH-NFV">
-                                <rect key="frame" x="16" y="146" width="382" height="716"/>
+                                <rect key="frame" x="16" y="187" width="382" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CenterCell" rowHeight="175" id="7bv-N3-z3g" customClass="VaccinationCentersTVC" customModule="Vaccinations" customModuleProvider="target">
@@ -233,18 +245,16 @@ Vaccinate</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-td-qVI">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-td-qVI">
                                                     <rect key="frame" x="16" y="124" width="350" height="31"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-XY-DPX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="31"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Available Vaccines"/>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt8-az-AbB">
-                                                            <rect key="frame" x="179" y="0.0" width="171" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Slots"/>
+                                                            <connections>
+                                                                <action selector="actionForSlots:" destination="7bv-N3-z3g" eventType="touchUpInside" id="lR2-AM-2Fu"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -266,33 +276,92 @@ Vaccinate</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnShowSlots" destination="Gt8-az-AbB" id="nrv-EH-Atc"/>
                                             <outlet property="lblCenterName" destination="QU4-gK-zqF" id="Ndc-UZ-0F0"/>
                                             <outlet property="lblDate" destination="m20-Fg-6Ex" id="PHf-z4-FdE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Vaccine Centers Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-0E-pxX">
+                                <rect key="frame" x="70.5" y="436" width="273.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FLl-KR-gYB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FLl-KR-gYB" firstAttribute="trailing" secondItem="5Jc-cG-7yd" secondAttribute="trailing" constant="16" id="0Dc-IK-4fI"/>
                             <constraint firstItem="NYp-sU-JWa" firstAttribute="leading" secondItem="FLl-KR-gYB" secondAttribute="leading" constant="16" id="80W-wC-UkV"/>
-                            <constraint firstItem="Q4s-MH-NFV" firstAttribute="top" secondItem="NYp-sU-JWa" secondAttribute="bottom" constant="8" id="Pns-dI-3eR"/>
+                            <constraint firstItem="ClP-0E-pxX" firstAttribute="centerY" secondItem="v17-GC-EOg" secondAttribute="centerY" id="SNH-Of-v2k"/>
+                            <constraint firstItem="ClP-0E-pxX" firstAttribute="centerX" secondItem="v17-GC-EOg" secondAttribute="centerX" id="Tdl-jV-H3w"/>
+                            <constraint firstItem="Q4s-MH-NFV" firstAttribute="top" secondItem="5Jc-cG-7yd" secondAttribute="bottom" constant="8" id="U8y-84-VbA"/>
                             <constraint firstItem="FLl-KR-gYB" firstAttribute="trailing" secondItem="Q4s-MH-NFV" secondAttribute="trailing" constant="16" id="V5I-Gd-bOo"/>
                             <constraint firstItem="FLl-KR-gYB" firstAttribute="trailing" secondItem="NYp-sU-JWa" secondAttribute="trailing" constant="16" id="eQH-FB-X6y"/>
                             <constraint firstItem="FLl-KR-gYB" firstAttribute="bottom" secondItem="Q4s-MH-NFV" secondAttribute="bottom" id="gR5-Eq-oB7"/>
                             <constraint firstItem="NYp-sU-JWa" firstAttribute="top" secondItem="FLl-KR-gYB" secondAttribute="top" constant="20" id="wBZ-qI-pKY"/>
+                            <constraint firstItem="5Jc-cG-7yd" firstAttribute="leading" secondItem="FLl-KR-gYB" secondAttribute="leading" constant="16" id="xGM-rD-oc4"/>
+                            <constraint firstItem="5Jc-cG-7yd" firstAttribute="top" secondItem="NYp-sU-JWa" secondAttribute="bottom" constant="20" id="xT8-Dl-yvO"/>
                             <constraint firstItem="Q4s-MH-NFV" firstAttribute="leading" secondItem="FLl-KR-gYB" secondAttribute="leading" constant="16" id="ypd-1P-IB6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Centers" id="3fh-RG-506"/>
                     <connections>
+                        <outlet property="lblBlankMessage" destination="ClP-0E-pxX" id="jnP-lR-mRd"/>
+                        <outlet property="lblVaccineName" destination="5Jc-cG-7yd" id="HFj-3z-pbV"/>
                         <outlet property="tblCenters" destination="Q4s-MH-NFV" id="jjw-dR-ErP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dv0-Ly-m71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="75"/>
+        </scene>
+        <!--Slots TableVC-->
+        <scene sceneID="qFY-GO-97k">
+            <objects>
+                <tableViewController storyboardIdentifier="SlotsTableVC" id="iaB-xU-BiX" customClass="SlotsTableVC" customModule="Vaccinations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zav-ST-XMC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SlotCell" id="R0L-30-6tG" customClass="SlotDetailsTVC" customModule="Vaccinations" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R0L-30-6tG" id="qca-sM-EzI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFN-0l-N1y">
+                                            <rect key="frame" x="20" y="11" width="374" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tFN-0l-N1y" firstAttribute="leading" secondItem="qca-sM-EzI" secondAttribute="leadingMargin" id="6Jb-sz-epo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tFN-0l-N1y" secondAttribute="trailing" id="Y8c-OJ-nfS"/>
+                                        <constraint firstItem="tFN-0l-N1y" firstAttribute="top" secondItem="qca-sM-EzI" secondAttribute="topMargin" id="gsP-GQ-jeY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tFN-0l-N1y" secondAttribute="bottom" id="htb-Xv-sfz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblSlot" destination="tFN-0l-N1y" id="Qja-2C-aDq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iaB-xU-BiX" id="btB-5T-ghD"/>
+                            <outlet property="delegate" destination="iaB-xU-BiX" id="60g-iC-pw7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogx-gi-a0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6S7-hK-fdT">

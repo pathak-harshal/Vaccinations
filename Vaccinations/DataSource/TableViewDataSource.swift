@@ -12,9 +12,9 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableVi
     
     private var cellIdentifier :String!
     private var items :[ViewModel]!
-    var configureCell :(Cell,ViewModel) -> ()
+    var configureCell :(Cell,ViewModel, Int) -> ()
     
-    init(cellIdentifier :String, items :[ViewModel], configureCell: @escaping (Cell,ViewModel) -> ()) {
+    init(cellIdentifier :String, items :[ViewModel], configureCell: @escaping (Cell,ViewModel, Int) -> ()) {
         
         self.cellIdentifier = cellIdentifier
         self.items = items
@@ -29,7 +29,7 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableVi
         
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! Cell
         let item = self.items[indexPath.row]
-        self.configureCell(cell,item)
+        self.configureCell(cell,item, indexPath.row)
         return cell
     }
     

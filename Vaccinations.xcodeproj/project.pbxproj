@@ -18,6 +18,11 @@
 		5EA60A882789696100484E96 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A872789696100484E96 /* CardView.swift */; };
 		5EA60A8A2789698500484E96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A892789698500484E96 /* Constants.swift */; };
 		5EA60A8D27896A1700484E96 /* VaccinationCentersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */; };
+		5EDA9D91278A8C40005BDFE6 /* EzPopup in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDA9D90278A8C40005BDFE6 /* EzPopup */; };
+		5EDA9D93278A8F07005BDFE6 /* SlotsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA9D92278A8F07005BDFE6 /* SlotsTableVC.swift */; };
+		5EDA9D95278A8FBC005BDFE6 /* SlotDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA9D94278A8FBC005BDFE6 /* SlotDetailsTVC.swift */; };
+		5EDA9D9B278A9665005BDFE6 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA9D9A278A9665005BDFE6 /* Slot.swift */; };
+		5EDA9D9D278AB882005BDFE6 /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA9D9C278AB882005BDFE6 /* Vaccine.swift */; };
 		5EE9B7F0278172B800CCA90D /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7EF278172B800CCA90D /* WebServices.swift */; };
 		5EE9B7F32781738400CCA90D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F22781738400CCA90D /* State.swift */; };
 		5EE9B7F6278174CD00CCA90D /* StatesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9B7F5278174CD00CCA90D /* StatesListViewModel.swift */; };
@@ -43,6 +48,10 @@
 		5EA60A872789696100484E96 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5EA60A892789698500484E96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationCentersTVC.swift; sourceTree = "<group>"; };
+		5EDA9D92278A8F07005BDFE6 /* SlotsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotsTableVC.swift; sourceTree = "<group>"; };
+		5EDA9D94278A8FBC005BDFE6 /* SlotDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDetailsTVC.swift; sourceTree = "<group>"; };
+		5EDA9D9A278A9665005BDFE6 /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		5EDA9D9C278AB882005BDFE6 /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		5EE9B7EF278172B800CCA90D /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		5EE9B7F22781738400CCA90D /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		5EE9B7F5278174CD00CCA90D /* StatesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesListViewModel.swift; sourceTree = "<group>"; };
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDA9D91278A8C40005BDFE6 /* EzPopup in Frameworks */,
 				5EE9B7FD278185E500CCA90D /* MBProgressHUD in Frameworks */,
 				5E0610B22691802000D53900 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -96,6 +106,7 @@
 				5E06109E26916EA400D53900 /* SceneDelegate.swift */,
 				5E0610A026916EA400D53900 /* SearchForVaccinationVC.swift */,
 				5EE9B7FE2781928A00CCA90D /* VaccinationCentersVC.swift */,
+				5EDA9D92278A8F07005BDFE6 /* SlotsTableVC.swift */,
 				5E0610A226916EA400D53900 /* Main.storyboard */,
 				5E0610A526916EA500D53900 /* Assets.xcassets */,
 				5E0610A726916EA500D53900 /* LaunchScreen.storyboard */,
@@ -125,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5EA60A8C27896A1700484E96 /* VaccinationCentersTVC.swift */,
+				5EDA9D94278A8FBC005BDFE6 /* SlotDetailsTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -143,6 +155,8 @@
 				5EE9B8022781C9A100CCA90D /* VaccinationCenterResponse */,
 				5EE9B7F22781738400CCA90D /* State.swift */,
 				5EE9B7F727817F0D00CCA90D /* District.swift */,
+				5EDA9D9A278A9665005BDFE6 /* Slot.swift */,
+				5EDA9D9C278AB882005BDFE6 /* Vaccine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +199,7 @@
 			packageProductDependencies = (
 				5E0610B12691802000D53900 /* IQKeyboardManagerSwift */,
 				5EE9B7FC278185E500CCA90D /* MBProgressHUD */,
+				5EDA9D90278A8C40005BDFE6 /* EzPopup */,
 			);
 			productName = Vaccinations;
 			productReference = 5E06109926916EA400D53900 /* Vaccinations.app */;
@@ -216,6 +231,7 @@
 			packageReferences = (
 				5E0610B02691802000D53900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				5EE9B7FB278185E500CCA90D /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				5EDA9D8F278A8C40005BDFE6 /* XCRemoteSwiftPackageReference "EzPopup" */,
 			);
 			productRefGroup = 5E06109A26916EA400D53900 /* Products */;
 			projectDirPath = "";
@@ -244,15 +260,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDA9D95278A8FBC005BDFE6 /* SlotDetailsTVC.swift in Sources */,
+				5EDA9D9D278AB882005BDFE6 /* Vaccine.swift in Sources */,
 				5EA60A882789696100484E96 /* CardView.swift in Sources */,
 				5EE9B7FA2781803900CCA90D /* DistrictsListViewModel.swift in Sources */,
 				5EE9B8082781CABF00CCA90D /* CentersListViewModel.swift in Sources */,
 				5EE9B7F6278174CD00CCA90D /* StatesListViewModel.swift in Sources */,
+				5EDA9D93278A8F07005BDFE6 /* SlotsTableVC.swift in Sources */,
 				5EE9B8052781C9BD00CCA90D /* Sessions.swift in Sources */,
 				5EA60A8A2789698500484E96 /* Constants.swift in Sources */,
 				5EA60A8D27896A1700484E96 /* VaccinationCentersTVC.swift in Sources */,
 				5EE9B7FF2781928A00CCA90D /* VaccinationCentersVC.swift in Sources */,
 				5EE9B7F827817F0D00CCA90D /* District.swift in Sources */,
+				5EDA9D9B278A9665005BDFE6 /* Slot.swift in Sources */,
 				5E0610A126916EA400D53900 /* SearchForVaccinationVC.swift in Sources */,
 				5E06109D26916EA400D53900 /* AppDelegate.swift in Sources */,
 				5EE9B7F0278172B800CCA90D /* WebServices.swift in Sources */,
@@ -471,6 +491,14 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		5EDA9D8F278A8C40005BDFE6 /* XCRemoteSwiftPackageReference "EzPopup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huynguyencong/EzPopup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5EE9B7FB278185E500CCA90D /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
@@ -486,6 +514,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E0610B02691802000D53900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		5EDA9D90278A8C40005BDFE6 /* EzPopup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EDA9D8F278A8C40005BDFE6 /* XCRemoteSwiftPackageReference "EzPopup" */;
+			productName = EzPopup;
 		};
 		5EE9B7FC278185E500CCA90D /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;

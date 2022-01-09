@@ -14,51 +14,102 @@ class CentersListViewModel: NSObject {
     @objc dynamic private(set) var centerViewModeles: [CenterViewModel] = [CenterViewModel]()
     var bindToCenterViewModels :(() -> ()) = {  }
     private var token :NSKeyValueObservation?
+    private var forPaid: Bool
     
-    init(webservice: WebServices, pincode: String, date: String) {
+    init(webservice: WebServices, pincode: String, date: String, forPaid: Bool) {
         
         self.webservice = webservice
         self.pincode = pincode
         self.date = date
+        self.forPaid = forPaid
         super.init()
         token = self.observe(\.centerViewModeles) { _,_ in
             self.bindToCenterViewModels()
         }
         // call populate states
-        populateAllCentersByPincode()
+        populateAllCentersByPincode(forPaid: forPaid)
     }
     
-    init(webservice: WebServices, districtId: Int, date: String) {
+    init(webservice: WebServices, districtId: Int, date: String, forPaid: Bool) {
         
         self.webservice = webservice
         self.districtId = districtId
         self.date = date
+        self.forPaid = forPaid
         super.init()
         token = self.observe(\.centerViewModeles) { _,_ in
             self.bindToCenterViewModels()
         }
-        populateAllCentersByDistrict()
+        populateAllCentersByDistrict(forPaid: forPaid)
     }
     
     func invalidateObservers() {
         self.token?.invalidate()
     }
     
-    func populateAllCentersByPincode() {
+    func populateAllCentersByPincode(forPaid: Bool) {
         if let strongPincode = self.pincode {
             webservice.loadAllCentersByPincode(pincode: strongPincode, date: self.date) { sessions in
                 if let allSessions = sessions {
-                    self.centerViewModeles = allSessions.compactMap(CenterViewModel.init)
+                    if forPaid {
+                        let allCenters = allSessions.compactMap(CenterViewModel.init).filter({ $0.fee_type?.uppercased() == "PAID"})
+                        print("allCenters count \(allCenters.count)")
+                        var uniqueCenters = [CenterViewModel]()
+                        for center in allCenters {
+                            let firstIndex = uniqueCenters.firstIndex(where: { $0.center_id == center.center_id })
+                            if firstIndex == nil {
+                                uniqueCenters.append(center)
+                            }
+                        }
+                        self.centerViewModeles = uniqueCenters
+                        print("uniqueCenters count \(uniqueCenters.count)")
+                    } else {
+                        let allCenters = allSessions.compactMap(CenterViewModel.init).filter({ $0.fee_type?.uppercased() == "FREE"})
+                        print("allCenters count \(allCenters.count)")
+                        var uniqueCenters = [CenterViewModel]()
+                        for center in allCenters {
+                            let firstIndex = uniqueCenters.firstIndex(where: { $0.center_id == center.center_id })
+                            if firstIndex == nil {
+                                uniqueCenters.append(center)
+                            }
+                        }
+                        self.centerViewModeles = uniqueCenters
+                        print("uniqueCenters count \(uniqueCenters.count)")
+                    }
                 }
             }
         }
     }
     
-    func populateAllCentersByDistrict() {
+    func populateAllCentersByDistrict(forPaid: Bool) {
         if let strongDistrictId = self.districtId {
             webservice.loadAllCentersByDistrict(districtId: strongDistrictId, date: self.date) { sessions in
                 if let allSessions = sessions {
-                    self.centerViewModeles = allSessions.compactMap(CenterViewModel.init)
+                    if forPaid {
+                        let allCenters = allSessions.compactMap(CenterViewModel.init).filter({ $0.fee_type?.uppercased() == "PAID"})
+                        print("allCenters count \(allCenters.count)")
+                        var uniqueCenters = [CenterViewModel]()
+                        for center in allCenters {
+                            let firstIndex = uniqueCenters.firstIndex(where: { $0.center_id == center.center_id })
+                            if firstIndex == nil {
+                                uniqueCenters.append(center)
+                            }
+                        }
+                        self.centerViewModeles = uniqueCenters
+                        print("uniqueCenters count \(uniqueCenters.count)")
+                    } else {
+                        let allCenters = allSessions.compactMap(CenterViewModel.init).filter({ $0.fee_type?.uppercased() == "FREE"})
+                        print("allCenters count \(allCenters.count)")
+                        var uniqueCenters = [CenterViewModel]()
+                        for center in allCenters {
+                            let firstIndex = uniqueCenters.firstIndex(where: { $0.center_id == center.center_id })
+                            if firstIndex == nil {
+                                uniqueCenters.append(center)
+                            }
+                        }
+                        self.centerViewModeles = uniqueCenters
+                        print("uniqueCenters count \(uniqueCenters.count)")
+                    }
                 }
             }
         }
@@ -66,6 +117,19 @@ class CentersListViewModel: NSObject {
     
     func center(at index:Int) -> CenterViewModel {
         return self.centerViewModeles[index]
+    }
+    
+    func getAllVaccines() -> [Vaccine] {
+        var vaccines = [Vaccine]()
+        
+        for model in self.centerViewModeles {
+            let firstIndex = vaccines.firstIndex(where: { $0.vaccineName == model.vaccine })
+            if firstIndex == nil {
+                vaccines.append(Vaccine(vaccineName: model.vaccine!, vaccineFees: model.fee!))
+            }
+        }
+        
+        return vaccines
     }
 }
 

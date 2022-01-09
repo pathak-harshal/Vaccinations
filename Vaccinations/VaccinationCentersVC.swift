@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EzPopup
 
 class VaccinationCentersVC: UIViewController {
 
@@ -18,48 +19,73 @@ class VaccinationCentersVC: UIViewController {
     var date: String?
     
     @IBOutlet weak var tblCenters: UITableView!
-    
+    @IBOutlet weak var lblBlankMessage: UILabel!
+    @IBOutlet weak var lblVaccineName: UILabel!
+    var forPaid = true {
+        didSet{
+            if let districtId = districtId, let date = date {
+                setViewOnDistrict(districtId: districtId, date: date, forPaid: forPaid)
+            }
+            
+            if let pincode = pincode, let date = date {
+                setViewOnPincode(pincode: pincode, date: date, forPaid: forPaid)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let districtId = districtId, let date = date {
-            setViewOnDistrict(districtId: districtId, date: date)
+            setViewOnDistrict(districtId: districtId, date: date, forPaid: self.forPaid)
         }
         
         if let pincode = pincode, let date = date {
-            setViewOnPincode(pincode: pincode, date: date)
+            setViewOnPincode(pincode: pincode, date: date, forPaid: self.forPaid)
         }
         
     }
     
-    private func setViewOnPincode(pincode: String, date: String) {
+    private func setViewOnPincode(pincode: String, date: String , forPaid: Bool) {
         self.webservice = WebServices()
-        self.centersListViewModel = CentersListViewModel(webservice: webservice, pincode: pincode, date: date)
+        self.centersListViewModel = CentersListViewModel(webservice: webservice, pincode: pincode, date: date, forPaid: forPaid)
         self.centersListViewModel.bindToCenterViewModels = {
             self.updateDataSource()
         }
     }
     
-    private func setViewOnDistrict(districtId: Int, date: String) {
+    private func setViewOnDistrict(districtId: Int, date: String, forPaid: Bool) {
         self.webservice = WebServices()
-        self.centersListViewModel = CentersListViewModel(webservice: webservice, districtId: districtId, date: date)
+        self.centersListViewModel = CentersListViewModel(webservice: webservice, districtId: districtId, date: date, forPaid: forPaid)
         self.centersListViewModel.bindToCenterViewModels = {
             self.updateDataSource()
         }
     }
     
     private func updateDataSource() {
-        
-        self.dataSource = TableViewDataSource(cellIdentifier: Cells.centerCell, items: self.centersListViewModel.centerViewModeles) { cell, vm in
-            
-            cell.lblDate.text = vm.date
-            cell.lblCenterName.text = vm.name
-            
+        if forPaid {
+            lblVaccineName.text = self.centersListViewModel.getAllVaccines().map({ "\($0.vaccineName) - \($0.vaccineFees)₹" }).joined(separator: ", ")
+        } else {
+            lblVaccineName.text = self.centersListViewModel.getAllVaccines().map({ "\($0.vaccineName)" }).joined(separator: ", ")
         }
-        
-        self.tblCenters.dataSource = self.dataSource
-        self.tblCenters.reloadData()
+        if !self.centersListViewModel.centerViewModeles.isEmpty {
+            lblBlankMessage.isHidden = true
+            tblCenters.isHidden = false
+            self.dataSource = TableViewDataSource(cellIdentifier: Cells.centerCell, items: self.centersListViewModel.centerViewModeles) { cell, vm, index in
+                
+                cell.delegate = self
+                cell.lblDate.text = vm.date
+                cell.lblCenterName.text = vm.name
+                cell.btnShowSlots.tag = index
+                
+            }
+            
+            self.tblCenters.dataSource = self.dataSource
+            self.tblCenters.reloadData()
+        } else {
+            lblBlankMessage.isHidden = false
+            tblCenters.isHidden = true
+        }
     }
 
     /*
@@ -72,4 +98,20 @@ class VaccinationCentersVC: UIViewController {
     }
     */
 
+    @IBAction func onPaymentTypeChanged(_ sender: UISegmentedControl) {
+        self.forPaid = sender.selectedSegmentIndex == 0
+    }
+}
+
+extension VaccinationCentersVC: ButtonTappedActions {
+    func didTapOnSlots(_ sender: UIButton) {
+        print("\(sender.tag)")
+        let slotsAlertVC = SlotsTableVC.instantiate()
+        slotsAlertVC?.slots = self.centersListViewModel.center(at: sender.tag).slots ?? [String]()
+        let popupVC = PopupViewController(contentController: slotsAlertVC!, popupWidth: 200, popupHeight: 200)
+        popupVC.cornerRadius = 5
+        present(popupVC, animated: true, completion: nil)
+    }
+    
+    
 }

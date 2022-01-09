@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol ButtonTappedActions {
+    func didTapOnSlots(_ sender: UIButton)
+}
+
 class VaccinationCentersTVC: UITableViewCell {
     
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblCenterName: UILabel!
+    @IBOutlet weak var btnShowSlots: UIButton!
+    
+    var delegate: ButtonTappedActions?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +28,10 @@ class VaccinationCentersTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func actionForSlots(_ sender: UIButton) {
+        delegate?.didTapOnSlots(sender)
     }
 
 }
